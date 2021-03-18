@@ -151,9 +151,10 @@ ul {
   }
 }
 
-img{
-  height: 250px
-}
+/* img{
+  height: 250px;
+  width: 300px;
+} */
 
 button.hide-button {
 

@@ -9,7 +9,7 @@ const HogCard = ({ name, img, changeSpotlight }) => {
 
     return (
             <>
-            <div id={name} className='pigTile'>
+            <div class = 'ui card' id={name} className='pigTile'>
                 <h3 id={name}>{name}</h3>
                 {isHidden ? null : 
                 <img src={img} alt={name} id={name} onClick={clickHandler}/>
