@@ -22,6 +22,8 @@ const HogList = ({ pigList, pigPics, changeSpotlight }) => {
                             return 0;
                         }
                 )
+                default:
+                    return pigList
         }
     }
 

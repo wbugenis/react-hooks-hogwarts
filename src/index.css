@@ -154,3 +154,10 @@ ul {
 img{
   height: 250px
 }
+
+button.hide-button {
+
+  height: 25px;
+  width: 70px;
+
+}

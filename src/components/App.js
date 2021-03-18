@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Nav from "./Nav";
 import Spotlight from "./Spotlight"
 import HogList from "./HogList"
+import Form from './Form'
 
 import hogs from "../porkers_data";
 
@@ -35,10 +36,19 @@ const pigPics = {
 
 
 function App() {
-  const [spotlightPig, setSpotlight] = useState(hogs[0])
+
+  const [hogListSt, setHogListSt] = useState(hogs)
+
+  const [spotlightPig, setSpotlight] = useState(hogListSt[0])
+
+  const updateHogList = (newHog) => {
+    const hogList = [...hogListSt, newHog]
+
+    setHogListSt(hogList)
+  }
 
   const changeSpotlight = (name) => {
-    const filtered = hogs.filter(hog => hog.name === name)[0]
+    const filtered = hogListSt.filter(hog => hog.name === name)[0]
     setSpotlight(filtered)
   }
 
@@ -46,7 +56,8 @@ function App() {
     <div className="App">
       <Nav />
       <Spotlight pig={spotlightPig} img={pigPics[spotlightPig.name]} />
-      <HogList pigList={hogs} pigPics={pigPics} changeSpotlight={changeSpotlight}/>
+      <HogList pigList={hogListSt} pigPics={pigPics} changeSpotlight={changeSpotlight}/>
+      <Form updateHogList={updateHogList}/>
     </div>
   );
 }
